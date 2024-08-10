@@ -15,6 +15,7 @@ public class KafkaConsumer {
 
     @KafkaListener(topics = "order-topic", groupId = "product-group")
     public void consume(OrderPlacedEvent event) {
+    	System.out.println("Consuming the orders placed event");
         event.getOrderItems().forEach(orderItem -> {
             Product product = productService.getProductById(orderItem.getProductId()).orElseThrow();
             product.setStock(product.getStock() - orderItem.getQuantity());
