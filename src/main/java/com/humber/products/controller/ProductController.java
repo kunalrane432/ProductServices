@@ -17,7 +17,7 @@ import com.humber.products.model.Product;
 import com.humber.products.service.ProductService;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/products")
 public class ProductController {
 
     private final ProductService productService;
