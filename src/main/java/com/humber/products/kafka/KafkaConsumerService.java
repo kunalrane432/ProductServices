@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.humber.products.model.Product;
 import com.humber.products.repository.ProductRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,6 @@ public class KafkaConsumerService {
     private final ProductRepository productRepository;
     private final ObjectMapper objectMapper;
 
-    @Autowired
     public KafkaConsumerService(ProductRepository productRepository) {
         this.productRepository = productRepository;
         this.objectMapper = new ObjectMapper();
